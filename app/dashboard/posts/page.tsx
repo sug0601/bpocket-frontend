@@ -10,7 +10,7 @@ import { Search, Pencil, Trash2, ChevronLeft, ChevronRight, Plus } from "lucide-
 import type { Post, Building, Category, User } from "@/lib/types"
 import { fetcher } from "@/helpers/fetch"
 import PostFormDialog from "./form"
-import { Label } from "@/components/ui/label"
+import { Badge } from "@/components/ui/badge"
 
 export type PostFormData = {
   buildingId: string
@@ -152,7 +152,7 @@ export default function PostsPage() {
                 ) : (
                   filteredPosts.map(({ post, building, category, user }) => (
                     <TableRow key={post.id}>
-                      <TableCell><Label>{category.name}</Label></TableCell>
+                      <TableCell><Badge>{category.name}</Badge></TableCell>
                       <TableCell>{building.name}</TableCell>
                       <TableCell>{post.status}</TableCell>
                       <TableCell>{user.name}</TableCell>
